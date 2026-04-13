@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <h2>Add Employee</h2>
+
+  <form (ngSubmit)="addEmployee()">
+
+    <div class="mb-3">
+      <input [(ngModel)]="firstName" name="firstName" placeholder="First Name" class="form-control" required>
+      <small class="text-danger" *ngIf="!firstName">First name is required</small>
+    </div>
+
+    <div class="mb-3">
+      <input [(ngModel)]="lastName" name="lastName" placeholder="Last Name" class="form-control" required>
+      <small class="text-danger" *ngIf="!lastName">Last name is required</small>
+    </div>
+
+    <div class="mb-3">
+      <input [(ngModel)]="email" name="email" placeholder="Email" class="form-control" required>
+      <small class="text-danger" *ngIf="!email">Email is required</small>
+    </div>
+
+    <div class="mb-3">
+      <input [(ngModel)]="department" name="department" placeholder="Department" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <input [(ngModel)]="position" name="position" placeholder="Position" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <input [(ngModel)]="imageUrl" name="imageUrl" placeholder="Profile Image URL" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Upload Image (optional)</label>
+      <input type="file" class="form-control">
+      <small class="text-muted">
+        You can paste an image URL above or upload a file
+      </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary me-2">Add</button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+
+  </form>
+</div>

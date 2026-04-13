@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>Employee Details</h2>
+
+  <p *ngIf="loading">Loading...</p>
+  <p *ngIf="error" class="text-danger">{{ error }}</p>
+
+  <div *ngIf="employee">
+    <img
+      *ngIf="employee.imageUrl"
+      [src]="employee.imageUrl"
+      alt="Employee Photo"
+      width="150"
+      class="mb-3"
+    >
+
+    <p><strong>First Name:</strong> {{ employee.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ employee.lastName }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+    <p><strong>Department:</strong> {{ employee.department }}</p>
+    <p><strong>Position:</strong> {{ employee.position }}</p>
+  </div>
+
+  <p *ngIf="!loading && !error && !employee">Employee not found.</p>
+
+  <button class="btn btn-secondary" (click)="goBack()">Back</button>
+</div>

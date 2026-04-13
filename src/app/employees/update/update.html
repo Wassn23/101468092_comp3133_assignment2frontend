@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <h2>Update Employee</h2>
+
+  <div class="mb-3">
+    <input [(ngModel)]="firstName" placeholder="First Name" class="form-control">
+    <small class="text-danger" *ngIf="!firstName">First name is required</small>
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="lastName" placeholder="Last Name" class="form-control">
+    <small class="text-danger" *ngIf="!lastName">Last name is required</small>
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="email" placeholder="Email" class="form-control">
+    <small class="text-danger" *ngIf="!email">Email is required</small>
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="department" placeholder="Department" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="position" placeholder="Position" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <input [(ngModel)]="imageUrl" placeholder="Profile Image URL" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Upload Image</label>
+    <input type="file" class="form-control">
+    <small class="text-muted">
+      You can paste an image URL above or upload a file
+    </small>
+  </div>
+
+  <button (click)="updateEmployee()" class="btn btn-primary me-2">
+    Update
+  </button>
+
+  <button (click)="cancel()" class="btn btn-secondary">
+    Cancel
+  </button>
+</div>

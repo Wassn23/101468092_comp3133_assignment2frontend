@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Employees</h1>
+    <div>
+      <button class="btn btn-primary me-2" (click)="goToAdd()">Add Employee</button>
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="mb-3 d-flex">
+    <input
+      [(ngModel)]="searchText"
+      placeholder="Search by department or position"
+      class="form-control me-2"
+    >
+    <button class="btn btn-secondary me-2" (click)="searchEmployees()">Search</button>
+    <button class="btn btn-outline-secondary" (click)="loadEmployees()">Reset</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let emp of employees" class="mb-2">
+      {{ emp.firstName }} {{ emp.lastName }} - {{ emp.email }}
+      <span *ngIf="emp.department"> | {{ emp.department }}</span>
+      <span *ngIf="emp.position"> | {{ emp.position }}</span>
+
+      <button (click)="goToView(emp.id)" style="margin-left:10px;">
+        View
+      </button>
+
+      <button (click)="goToUpdate(emp.id)" style="margin-left:10px;">
+        Update
+      </button>
+
+      <button (click)="deleteEmployee(emp.id)" style="margin-left:10px;">
+        Delete
+      </button>
+    </li>
+  </ul>
+
+  <p *ngIf="employees.length === 0">No employees found.</p>
+</div>
