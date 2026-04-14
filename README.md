@@ -1,4 +1,4 @@
-# StudentIDComp3133Assignment2
+#Comp3133Assignment2
 
 Wassn Al Nabhan
 
